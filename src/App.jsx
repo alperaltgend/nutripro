@@ -8,7 +8,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index path="/nutripro" element={<HomePage></HomePage>}></Route>
-        <Route  path="/nutripro/calculadora" element={<Calculadora></Calculadora>}></Route>
+        <Route  path="/calculadora" element={<Calculadora></Calculadora>}></Route>
       </Routes>
     </BrowserRouter>
   )

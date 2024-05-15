@@ -24,7 +24,7 @@ const Sidebar = () => {
         <aside className='flex h-screen'>
             <div className={`duration-500 shadow ${isOpen ? 'w-72' : 'w-[101px]'}`}>
                 <div className="flex items-center justify-between mx-6 my-5 mr-3">
-                    <Link to="/">
+                    <Link to="/nutripro">
                         <img className="text-xl font-bold ml-1 h-10 w-10" src={Logo}></img>
                     </Link>
                     
