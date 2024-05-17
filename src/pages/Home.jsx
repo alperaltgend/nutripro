@@ -17,7 +17,7 @@ const HomePage = () => {
                     moderna y eficiente, reemplazando a softwares similares como Anthro - OMS y brindando una experiencia
                     mejorada en el cálculo y análisis de datos antropométricos.
                 </h2>
-                <Link to="/calculadora">
+                <Link to="/nutripro/calculadora">
                     <button className='flex items-center mt-2 rounded-md bg-blue-500 shadow-lg bg-blue-500'>
                         <h1 className='ml-3 mr-1 my-1'>Calculadora</h1>
                         <FaChevronRight className='mr-2' />
