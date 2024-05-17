@@ -58,20 +58,6 @@ export default function Calculadora() {
                     </div>
                     <div className='ml-10 mt-2 flex flex-col'>
                         <FormControl class="flex items-center">
-                            <FormLabel id="demo-controlled-radio-buttons-group" >Medido</FormLabel>
-                            <RadioGroup
-
-                                aria-labelledby="demo-controlled-radio-buttons-group"
-                                name="controlled-radio-buttons-group"
-                                value={valueradio2}
-                                onChange={handleChange2}
-                                row
-                            >
-                                <FormControlLabel value="female" class="mx-2 mr-2 ml-2 " control={<Radio />} label="Acostado" />
-                                <FormControlLabel class="ml-2" value="male" control={<Radio />} label="De Pie" />
-                            </RadioGroup>
-                        </FormControl>
-                        <FormControl class="flex items-center">
                             <FormLabel id="demo-controlled-radio-buttons-group" >Genero</FormLabel>
                             <RadioGroup
 
@@ -98,6 +84,20 @@ export default function Calculadora() {
                             >
                                 <FormControlLabel value="female" class="ml-2.5 mr-16" control={<Radio />} label="No" />
                                 <FormControlLabel value="male" control={<Radio />} label="Si" />
+                            </RadioGroup>
+                        </FormControl>
+                        <FormControl class="flex items-center">
+                            <FormLabel id="demo-controlled-radio-buttons-group" >Medido</FormLabel>
+                            <RadioGroup
+
+                                aria-labelledby="demo-controlled-radio-buttons-group"
+                                name="controlled-radio-buttons-group"
+                                value={valueradio2}
+                                onChange={handleChange2}
+                                row
+                            >
+                                <FormControlLabel value="female" class="mx-2 mr-1.5 ml-2.5 " control={<Radio />} label="Acostado" />
+                                <FormControlLabel value="male" control={<Radio />} label="De Pie" />
                             </RadioGroup>
                         </FormControl>
                     </div>
