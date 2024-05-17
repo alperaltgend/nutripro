@@ -58,6 +58,20 @@ export default function Calculadora() {
                     </div>
                     <div className='ml-10 mt-2 flex flex-col'>
                         <FormControl class="flex items-center">
+                            <FormLabel id="demo-controlled-radio-buttons-group" >Medido</FormLabel>
+                            <RadioGroup
+
+                                aria-labelledby="demo-controlled-radio-buttons-group"
+                                name="controlled-radio-buttons-group"
+                                value={valueradio2}
+                                onChange={handleChange2}
+                                row
+                            >
+                                <FormControlLabel value="female" class="mx-2 mr-2 ml-2 " control={<Radio />} label="Acostado" />
+                                <FormControlLabel class="ml-2" value="male" control={<Radio />} label="De Pie" />
+                            </RadioGroup>
+                        </FormControl>
+                        <FormControl class="flex items-center">
                             <FormLabel id="demo-controlled-radio-buttons-group" >Genero</FormLabel>
                             <RadioGroup
 
@@ -69,20 +83,6 @@ export default function Calculadora() {
                             >
                                 <FormControlLabel value="female" class="ml-3 mr-8" control={<Radio />} label="Female" />
                                 <FormControlLabel value="male" control={<Radio />} label="Male" />
-                            </RadioGroup>
-                        </FormControl>
-                        <FormControl class="flex items-center">
-                            <FormLabel id="demo-controlled-radio-buttons-group" >Medido</FormLabel>
-                            <RadioGroup
-
-                                aria-labelledby="demo-controlled-radio-buttons-group"
-                                name="controlled-radio-buttons-group"
-                                value={valueradio2}
-                                onChange={handleChange2}
-                                row
-                            >
-                                <FormControlLabel value="female" class="ml-2" control={<Radio />} label="Acostado" />
-                                <FormControlLabel class="ml-1.5" value="male" control={<Radio />} label="De Pie" />
                             </RadioGroup>
                         </FormControl>
                         <FormControl class="flex items-center">
@@ -104,7 +104,7 @@ export default function Calculadora() {
                     <div className='mx-10 flex flex-col'>
                         <div className='flex items-start'>
                             <h1 className='mx-2 mt-4'>Peso(Kg)</h1>
-                            <NumberInput maxW={90} marginTop={2} marginLeft={85} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.2} size={"lg"}>
+                            <NumberInput maxW={90} marginTop={2} marginLeft={85} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
                                 <NumberInputField border={10} />
                                 <NumberInputStepper>
                                     <NumberIncrementStepper paddingTop={13} height={10} />
@@ -114,7 +114,7 @@ export default function Calculadora() {
                         </div>
                         <div className='flex items-start'>
                             <h1 className='mx-2 mt-4'>Longitud/Talla (cm)</h1>
-                            <NumberInput maxW={90} marginTop={2} marginLeft={10} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.2} size={"lg"}>
+                            <NumberInput maxW={90} marginTop={2} marginLeft={10} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
                                 <NumberInputField border={10} />
                                 <NumberInputStepper>
                                     <NumberIncrementStepper paddingTop={13} height={10} />
