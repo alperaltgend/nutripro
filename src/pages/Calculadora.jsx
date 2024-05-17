@@ -72,6 +72,20 @@ export default function Calculadora() {
                             </RadioGroup>
                         </FormControl>
                         <FormControl class="flex items-center">
+                            <FormLabel id="demo-controlled-radio-buttons-group" >Medido</FormLabel>
+                            <RadioGroup
+
+                                aria-labelledby="demo-controlled-radio-buttons-group"
+                                name="controlled-radio-buttons-group"
+                                value={valueradio2}
+                                onChange={handleChange2}
+                                row
+                            >
+                                <FormControlLabel value="female" class="mx-2 mr-0.5" control={<Radio />} label="Acostado" />
+                                <FormControlLabel value="male" class="ml-1" control={<Radio />} label="De Pie" />
+                            </RadioGroup>
+                        </FormControl>
+                        <FormControl class="flex items-center">
                             <FormLabel id="demo-controlled-radio-buttons-group" >Edema</FormLabel>
                             <RadioGroup
 
@@ -86,20 +100,7 @@ export default function Calculadora() {
                                 <FormControlLabel value="male" control={<Radio />} label="Si" />
                             </RadioGroup>
                         </FormControl>
-                        <FormControl class="flex items-center">
-                            <FormLabel id="demo-controlled-radio-buttons-group" >Medido</FormLabel>
-                            <RadioGroup
-
-                                aria-labelledby="demo-controlled-radio-buttons-group"
-                                name="controlled-radio-buttons-group"
-                                value={valueradio2}
-                                onChange={handleChange2}
-                                row
-                            >
-                                <FormControlLabel value="female" class="mx-2 mr-1.5 ml-2.5 " control={<Radio />} label="Acostado" />
-                                <FormControlLabel value="male" control={<Radio />} label="De Pie" />
-                            </RadioGroup>
-                        </FormControl>
+                        
                     </div>
                     <div className='mx-10 flex flex-col'>
                         <div className='flex items-start'>
