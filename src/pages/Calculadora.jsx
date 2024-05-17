@@ -67,8 +67,8 @@ export default function Calculadora() {
                                 onChange={handleChange1}
                                 row
                             >
-                                <FormControlLabel value="female" class="ml-3 mr-12" control={<Radio />} label="Female" />
-                                <FormControlLabel value="male" class="ml-2" control={<Radio />} label="Male" />
+                                <FormControlLabel value="female" class="ml-3 mr-8" control={<Radio />} label="Female" />
+                                <FormControlLabel value="male" control={<Radio />} label="Male" />
                             </RadioGroup>
                         </FormControl>
                         <FormControl class="flex items-center">
@@ -81,8 +81,8 @@ export default function Calculadora() {
                                 onChange={handleChange2}
                                 row
                             >
-                                <FormControlLabel value="female" class="ml-3 mr-8" control={<Radio />} label="Acostado" />
-                                <FormControlLabel class="ml-1" value="male" control={<Radio />} label="De Pie" />
+                                <FormControlLabel value="female" class="ml-2" control={<Radio />} label="Acostado" />
+                                <FormControlLabel class="ml-1.5" value="male" control={<Radio />} label="De Pie" />
                             </RadioGroup>
                         </FormControl>
                         <FormControl class="flex items-center">
@@ -96,7 +96,7 @@ export default function Calculadora() {
                                 row
                                 className='ml-1'
                             >
-                                <FormControlLabel value="female" class="ml-3 mr-24" control={<Radio />} label="No" />
+                                <FormControlLabel value="female" class="ml-2.5 mr-16" control={<Radio />} label="No" />
                                 <FormControlLabel value="male" control={<Radio />} label="Si" />
                             </RadioGroup>
                         </FormControl>
