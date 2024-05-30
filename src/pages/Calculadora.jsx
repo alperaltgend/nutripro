@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
 import dayjs from 'dayjs';
-
-import { DemoContainer, DemoItem } from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import { MobileDatePicker } from '@mui/x-date-pickers/MobileDatePicker';
-import { DesktopDatePicker } from '@mui/x-date-pickers/DesktopDatePicker';
-import { StaticDatePicker } from '@mui/x-date-pickers/StaticDatePicker';
 import Sidebar from '../components/Sidebar';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
+import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
 
 import {
     NumberInput,
@@ -25,6 +22,8 @@ import {
 
 export default function Calculadora() {
     const [value, setValue] = React.useState(dayjs('2022-04-17'));
+
+    const [valuetask, setValuetask] = React.useState(dayjs('2022-04-17'));
 
     const [valueradio1, setValueradio1] = React.useState(" ");
     const handleChange1 = (event) => {
@@ -40,12 +39,17 @@ export default function Calculadora() {
     const handleChange3 = (event) => {
         setValueradio3(event.target.value);
     };
+
+
+
+
+
     return (
 
         <div className='flex'>
             <Sidebar></Sidebar>
-            <div class="grid grid-cols-3 gap-4 w-screen">
-                <div className='col-span-3 flex my-10 mx-8'>
+            <div class="grid grid-cols-3 gap-4 w-screen ">
+                <div className='col-span-3 flex mt-10 mx-8 h-32'>
                     <h1 className='mx-2 mt-4'>Fecha de Visita</h1>
                     <div className='w-40'>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -58,7 +62,7 @@ export default function Calculadora() {
                     </div>
                     <div className='ml-10 mt-2 flex flex-col'>
                         <FormControl class="flex items-center">
-                            <FormLabel id="demo-controlled-radio-buttons-group" >Genero</FormLabel>
+                            <FormLabel id="demo-controlled-radio-buttons-group" >Género</FormLabel>
                             <RadioGroup
 
                                 aria-labelledby="demo-controlled-radio-buttons-group"
@@ -100,7 +104,7 @@ export default function Calculadora() {
                                 <FormControlLabel value="male" control={<Radio />} label="Si" />
                             </RadioGroup>
                         </FormControl>
-                        
+
                     </div>
                     <div className='mx-10 flex flex-col'>
                         <div className='flex items-start'>
@@ -123,23 +127,41 @@ export default function Calculadora() {
                                 </NumberInputStepper>
                             </NumberInput>
                         </div>
+                        <div className='flex items-start'>
+                            <h1 className='mx-2 mt-4'>IMC</h1>
+                            <h1 className='mt-4 ml-32'>01</h1>
+                        </div>
                     </div>
 
                 </div>
-                <div className='ml-10'>
-                    02
+                <div className='col-span-3 flex mx-8'>
+                    <h1 className='mx-2 mt-4'>Fecha de Naci.</h1>
+                    <div className='w-40'>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <DatePicker
+                                view={["Año", "Mes", "Día"]}
+                                value={valuetask}
+                                onChange={(newValuetask) => setValuetask(newValuetask)}
+                            />
+                        </LocalizationProvider>
+                        <FormGroup>
+                            <FormControlLabel value="fecha" control={<Checkbox/>} label="Fecha aprox." />
+                            <FormControlLabel value="end" control={<Checkbox/>} label="Desconocida" />
+                        </FormGroup>
+                    </div>
+
                 </div>
                 <div className=''>
-                    03
+
                 </div>
                 <div className=''>
-                    03
+                    04
                 </div>
                 <div className=''>
-                    03
+                    05
                 </div>
                 <div className=''>
-                    03
+                    06
                 </div>
 
             </div>

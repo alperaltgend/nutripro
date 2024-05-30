@@ -5,9 +5,6 @@ import { FaChevronCircleLeft } from "react-icons/fa";
 import { FaChevronCircleRight } from "react-icons/fa";
 import Logo from '../assets/img1.png';
 
-
-
-
 const Prueba = () => {
     const [isOpen, setIsOpen] = useState(true);
     const toggleSidebar = () => {
