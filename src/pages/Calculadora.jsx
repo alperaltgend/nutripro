@@ -48,7 +48,7 @@ export default function Calculadora() {
 
         <div className='flex'>
             <Sidebar></Sidebar>
-            <div class="grid grid-cols-3 grid-rows-3 gap-1 w-screen ">
+            <div class="grid grid-cols-3 grid-rows-2 gap-1 w-screen h-96">
                 <div className='col-span-3 flex mt-10 mx-8 h-32'>
                     <h1 className='mx-2 mt-4'>Fecha de Visita</h1>
                     <div className='w-40'>
@@ -148,7 +148,7 @@ export default function Calculadora() {
                             <FormControlLabel value="fecha" control={<Checkbox/>} label="Fecha aprox." />
                             <FormControlLabel value="end" control={<Checkbox/>} label="Desconocida" />
                         </FormGroup>
-                        <h1 className='mt-2'>Edad: 10</h1>
+                        <h1>Edad: 10</h1>
                     </div>
                     <div className='mx-10 flex flex-col'>
                         <div className='flex items-start'>
@@ -193,14 +193,6 @@ export default function Calculadora() {
                         </div>
                     </div>
                 </div>
-                <div className=''>
-                    03
-                </div>
-                <div className=''>
-                    04
-                </div>
-               
-
             </div>
         </div>
     );
