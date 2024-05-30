@@ -48,7 +48,7 @@ export default function Calculadora() {
 
         <div className='flex'>
             <Sidebar></Sidebar>
-            <div class="grid grid-cols-3 gap-4 w-screen ">
+            <div class="grid grid-cols-3 grid-rows-3 gap-1 w-screen ">
                 <div className='col-span-3 flex mt-10 mx-8 h-32'>
                     <h1 className='mx-2 mt-4'>Fecha de Visita</h1>
                     <div className='w-40'>
@@ -148,21 +148,58 @@ export default function Calculadora() {
                             <FormControlLabel value="fecha" control={<Checkbox/>} label="Fecha aprox." />
                             <FormControlLabel value="end" control={<Checkbox/>} label="Desconocida" />
                         </FormGroup>
+                        <h1 className='mt-2'>Edad: 10</h1>
                     </div>
-
+                    <div className='mx-10 flex flex-col'>
+                        <div className='flex items-start'>
+                            <h1 className='mx-2 mt-4'>Perimetro cefálico (cm)</h1>
+                            <NumberInput maxW={90} marginTop={2} marginLeft={50} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                                <NumberInputField border={10} />
+                                <NumberInputStepper>
+                                    <NumberIncrementStepper paddingTop={13} height={10} />
+                                    <NumberDecrementStepper height={10} />
+                                </NumberInputStepper>
+                            </NumberInput>
+                        </div>
+                        <div className='flex items-start'>
+                            <h1 className='mx-2 mt-4'>PPMB (cm)</h1>
+                            <NumberInput maxW={90} marginTop={2} marginLeft={135} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                                <NumberInputField border={10} />
+                                <NumberInputStepper>
+                                    <NumberIncrementStepper paddingTop={13} height={10} />
+                                    <NumberDecrementStepper height={10} />
+                                </NumberInputStepper>
+                            </NumberInput>
+                        </div>
+                        <div className='flex items-start'>
+                            <h1 className='mx-2 mt-4'>Pliegue tricipital (mm)</h1>
+                            <NumberInput maxW={90} marginTop={2} marginLeft={56} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                                <NumberInputField border={10} />
+                                <NumberInputStepper>
+                                    <NumberIncrementStepper paddingTop={13} height={10} />
+                                    <NumberDecrementStepper height={10} />
+                                </NumberInputStepper>
+                            </NumberInput>
+                        </div>
+                        <div className='flex items-start'>
+                            <h1 className='mx-2 mt-4'>Pliegue subescapular (mm)</h1>
+                            <NumberInput maxW={90} marginTop={2} marginLeft={20} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                                <NumberInputField border={10} />
+                                <NumberInputStepper>
+                                    <NumberIncrementStepper paddingTop={13} height={10} />
+                                    <NumberDecrementStepper height={10} />
+                                </NumberInputStepper>
+                            </NumberInput>
+                        </div>
+                    </div>
                 </div>
                 <div className=''>
-
+                    03
                 </div>
                 <div className=''>
                     04
                 </div>
-                <div className=''>
-                    05
-                </div>
-                <div className=''>
-                    06
-                </div>
+               
 
             </div>
         </div>
