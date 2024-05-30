@@ -134,7 +134,7 @@ export default function Calculadora() {
                     </div>
 
                 </div>
-                <div className='col-span-3 flex mx-8'>
+                <div className='col-span-3 flex mx-8 h-32'>
                     <h1 className='mx-2 mt-4'>Fecha de Naci.</h1>
                     <div className='w-40'>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
