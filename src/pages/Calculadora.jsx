@@ -11,6 +11,8 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Checkbox from '@mui/material/Checkbox';
 import FormGroup from '@mui/material/FormGroup';
+import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
 
 import {
     NumberInput,
@@ -19,6 +21,33 @@ import {
     NumberIncrementStepper,
     NumberDecrementStepper,
 } from '@chakra-ui/react'
+
+const marks = [
+    {
+        value: 0,
+        label: '0',
+    },
+    {
+        value: 25,
+        label: '25',
+    },
+    {
+        value: 50,
+        label: '50',
+    },
+    {
+        value: 75,
+        label: '75',
+    },
+    {
+        value: 100,
+        label: '100',
+    },
+];
+
+function valuetext(value) {
+    return `${value}`;
+}
 
 export default function Calculadora() {
     const [value, setValue] = React.useState(dayjs('2022-04-17'));
@@ -46,12 +75,13 @@ export default function Calculadora() {
 
     return (
 
-        <div className='flex'>
+        <div className='flex h-screen'>
             <Sidebar></Sidebar>
-            <div class="grid grid-cols-3 grid-rows-2 gap-1 w-screen h-96">
-                <div className='col-span-3 flex mt-10 mx-8 h-32'>
-                    <h1 className='mx-2 mt-4'>Fecha de Visita</h1>
-                    <div className='w-40'>
+            <div class="grid grid-cols-3 w-4/5 h-[40rem] mt-5">
+
+                <div className='flex mt-5 ml-5'>
+                    <h1 className='mx-2 mt-10'>Fecha de Visita</h1>
+                    <div className='w-40 mt-5'>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker
                                 view={["Año", "Mes", "Día"]}
@@ -60,82 +90,83 @@ export default function Calculadora() {
                             />
                         </LocalizationProvider>
                     </div>
-                    <div className='ml-10 mt-2 flex flex-col'>
-                        <FormControl class="flex items-center">
-                            <FormLabel id="demo-controlled-radio-buttons-group" >Género</FormLabel>
-                            <RadioGroup
-
-                                aria-labelledby="demo-controlled-radio-buttons-group"
-                                name="controlled-radio-buttons-group"
-                                value={valueradio1}
-                                onChange={handleChange1}
-                                row
-                            >
-                                <FormControlLabel value="female" class="ml-3 mr-8" control={<Radio />} label="Female" />
-                                <FormControlLabel value="male" control={<Radio />} label="Male" />
-                            </RadioGroup>
-                        </FormControl>
-                        <FormControl class="flex items-center">
-                            <FormLabel id="demo-controlled-radio-buttons-group" >Medido</FormLabel>
-                            <RadioGroup
-
-                                aria-labelledby="demo-controlled-radio-buttons-group"
-                                name="controlled-radio-buttons-group"
-                                value={valueradio2}
-                                onChange={handleChange2}
-                                row
-                            >
-                                <FormControlLabel value="female" class="mx-2 mr-0.5" control={<Radio />} label="Acostado" />
-                                <FormControlLabel value="male" class="ml-1" control={<Radio />} label="De Pie" />
-                            </RadioGroup>
-                        </FormControl>
-                        <FormControl class="flex items-center">
-                            <FormLabel id="demo-controlled-radio-buttons-group" >Edema</FormLabel>
-                            <RadioGroup
-
-                                aria-labelledby="demo-controlled-radio-buttons-group"
-                                name="controlled-radio-buttons-group"
-                                value={valueradio3}
-                                onChange={handleChange3}
-                                row
-                                className='ml-1'
-                            >
-                                <FormControlLabel value="female" class="ml-2.5 mr-16" control={<Radio />} label="No" />
-                                <FormControlLabel value="male" control={<Radio />} label="Si" />
-                            </RadioGroup>
-                        </FormControl>
-
-                    </div>
-                    <div className='mx-10 flex flex-col'>
-                        <div className='flex items-start'>
-                            <h1 className='mx-2 mt-4'>Peso(Kg)</h1>
-                            <NumberInput maxW={90} marginTop={2} marginLeft={85} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
-                                <NumberInputField border={10} />
-                                <NumberInputStepper>
-                                    <NumberIncrementStepper paddingTop={13} height={10} />
-                                    <NumberDecrementStepper height={10} />
-                                </NumberInputStepper>
-                            </NumberInput>
-                        </div>
-                        <div className='flex items-start'>
-                            <h1 className='mx-2 mt-4'>Longitud/Talla (cm)</h1>
-                            <NumberInput maxW={90} marginTop={2} marginLeft={10} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
-                                <NumberInputField border={10} />
-                                <NumberInputStepper>
-                                    <NumberIncrementStepper paddingTop={13} height={10} />
-                                    <NumberDecrementStepper height={10} />
-                                </NumberInputStepper>
-                            </NumberInput>
-                        </div>
-                        <div className='flex items-start'>
-                            <h1 className='mx-2 mt-4'>IMC</h1>
-                            <h1 className='mt-4 ml-32'>01</h1>
-                        </div>
-                    </div>
-
                 </div>
-                <div className='col-span-3 flex mx-8 h-32'>
-                    <h1 className='mx-2 mt-4'>Fecha de Naci.</h1>
+
+                <div className='flex flex-col mt-2 ml-4'>
+                    <FormControl class="flex items-center">
+                        <FormLabel id="demo-controlled-radio-buttons-group" >Género</FormLabel>
+                        <RadioGroup
+
+                            aria-labelledby="demo-controlled-radio-buttons-group"
+                            name="controlled-radio-buttons-group"
+                            value={valueradio1}
+                            onChange={handleChange1}
+                            row
+                        >
+                            <FormControlLabel value="female" class="ml-3 mr-8" control={<Radio />} label="Female" />
+                            <FormControlLabel value="male" control={<Radio />} label="Male" />
+                        </RadioGroup>
+                    </FormControl>
+                    <FormControl class="flex items-center">
+                        <FormLabel id="demo-controlled-radio-buttons-group" >Medido</FormLabel>
+                        <RadioGroup
+
+                            aria-labelledby="demo-controlled-radio-buttons-group"
+                            name="controlled-radio-buttons-group"
+                            value={valueradio2}
+                            onChange={handleChange2}
+                            row
+                        >
+                            <FormControlLabel value="female" class="mx-2 mr-0.5" control={<Radio />} label="Acostado" />
+                            <FormControlLabel value="male" class="ml-1" control={<Radio />} label="De Pie" />
+                        </RadioGroup>
+                    </FormControl>
+                    <FormControl class="flex items-center">
+                        <FormLabel id="demo-controlled-radio-buttons-group" >Edema</FormLabel>
+                        <RadioGroup
+
+                            aria-labelledby="demo-controlled-radio-buttons-group"
+                            name="controlled-radio-buttons-group"
+                            value={valueradio3}
+                            onChange={handleChange3}
+                            row
+                            className='ml-1'
+                        >
+                            <FormControlLabel value="female" class="ml-2.5 mr-16" control={<Radio />} label="No" />
+                            <FormControlLabel value="male" control={<Radio />} label="Si" />
+                        </RadioGroup>
+                    </FormControl>
+                </div>
+
+                <div className='flex flex-col'>
+                    <div className='flex items-start'>
+                        <h1 className='mx-2 mt-4'>Peso(Kg)</h1>
+                        <NumberInput maxW={90} marginTop={2} marginLeft={85} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                            <NumberInputField border={10} />
+                            <NumberInputStepper>
+                                <NumberIncrementStepper paddingTop={13} height={10} />
+                                <NumberDecrementStepper height={10} />
+                            </NumberInputStepper>
+                        </NumberInput>
+                    </div>
+                    <div className='flex items-start'>
+                        <h1 className='mx-2 mt-4'>Longitud/Talla (cm)</h1>
+                        <NumberInput maxW={90} marginTop={2} marginLeft={10} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                            <NumberInputField border={10} />
+                            <NumberInputStepper>
+                                <NumberIncrementStepper paddingTop={13} height={10} />
+                                <NumberDecrementStepper height={10} />
+                            </NumberInputStepper>
+                        </NumberInput>
+                    </div>
+                    <div className='flex items-start'>
+                        <h1 className='mx-2 mt-4'>IMC</h1>
+                        <h1 className='mt-4 ml-32'>01</h1>
+                    </div>
+                </div>
+
+                <div className='flex mt-5 ml-5'>
+                    <h1 className='mx-2 mt-5'>Fecha de Naci.</h1>
                     <div className='w-40'>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker
@@ -144,56 +175,180 @@ export default function Calculadora() {
                                 onChange={(newValuetask) => setValuetask(newValuetask)}
                             />
                         </LocalizationProvider>
-                        <FormGroup>
-                            <FormControlLabel value="fecha" control={<Checkbox/>} label="Fecha aprox." />
-                            <FormControlLabel value="end" control={<Checkbox/>} label="Desconocida" />
+                        <FormGroup className='mt-4'>
+                            <FormControlLabel value="fecha" control={<Checkbox />} label="Fecha aprox." />
+                            <FormControlLabel value="end" control={<Checkbox />} label="Desconocida" />
                         </FormGroup>
                         <h1>Edad: 10</h1>
                     </div>
-                    <div className='mx-10 flex flex-col'>
-                        <div className='flex items-start'>
-                            <h1 className='mx-2 mt-4'>Perimetro cefálico (cm)</h1>
-                            <NumberInput maxW={90} marginTop={2} marginLeft={50} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
-                                <NumberInputField border={10} />
-                                <NumberInputStepper>
-                                    <NumberIncrementStepper paddingTop={13} height={10} />
-                                    <NumberDecrementStepper height={10} />
-                                </NumberInputStepper>
-                            </NumberInput>
-                        </div>
-                        <div className='flex items-start'>
-                            <h1 className='mx-2 mt-4'>PPMB (cm)</h1>
-                            <NumberInput maxW={90} marginTop={2} marginLeft={135} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
-                                <NumberInputField border={10} />
-                                <NumberInputStepper>
-                                    <NumberIncrementStepper paddingTop={13} height={10} />
-                                    <NumberDecrementStepper height={10} />
-                                </NumberInputStepper>
-                            </NumberInput>
-                        </div>
-                        <div className='flex items-start'>
-                            <h1 className='mx-2 mt-4'>Pliegue tricipital (mm)</h1>
-                            <NumberInput maxW={90} marginTop={2} marginLeft={56} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
-                                <NumberInputField border={10} />
-                                <NumberInputStepper>
-                                    <NumberIncrementStepper paddingTop={13} height={10} />
-                                    <NumberDecrementStepper height={10} />
-                                </NumberInputStepper>
-                            </NumberInput>
-                        </div>
-                        <div className='flex items-start'>
-                            <h1 className='mx-2 mt-4'>Pliegue subescapular (mm)</h1>
-                            <NumberInput maxW={90} marginTop={2} marginLeft={20} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
-                                <NumberInputField border={10} />
-                                <NumberInputStepper>
-                                    <NumberIncrementStepper paddingTop={13} height={10} />
-                                    <NumberDecrementStepper height={10} />
-                                </NumberInputStepper>
-                            </NumberInput>
-                        </div>
+                </div>
+
+                <div className='flex flex-col ml-3'>
+                    <div className='flex items-start'>
+                        <h1 className='mx-1 mt-4'>Perimetro cefálico (cm)</h1>
+                        <NumberInput maxW={90} marginTop={2} marginLeft={40} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                            <NumberInputField border={10} />
+                            <NumberInputStepper>
+                                <NumberIncrementStepper paddingTop={13} height={10} />
+                                <NumberDecrementStepper height={10} />
+                            </NumberInputStepper>
+                        </NumberInput>
+                    </div>
+                    <div className='flex items-start'>
+                        <h1 className='mx-1 mt-4'>PPMB (cm)</h1>
+                        <NumberInput maxW={90} marginTop={2} marginLeft={125} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                            <NumberInputField border={10} />
+                            <NumberInputStepper>
+                                <NumberIncrementStepper paddingTop={13} height={10} />
+                                <NumberDecrementStepper height={10} />
+                            </NumberInputStepper>
+                        </NumberInput>
+                    </div>
+                    <div className='flex items-start'>
+                        <h1 className='mx-1 mt-4'>Pliegue tricipital (mm)</h1>
+                        <NumberInput maxW={90} marginTop={2} marginLeft={47} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                            <NumberInputField border={10} />
+                            <NumberInputStepper>
+                                <NumberIncrementStepper paddingTop={13} height={10} />
+                                <NumberDecrementStepper height={10} />
+                            </NumberInputStepper>
+                        </NumberInput>
+                    </div>
+                    <div className='flex items-start'>
+                        <h1 className='mx-1 mt-4'>Pliegue subescapular (mm)</h1>
+                        <NumberInput maxW={90} marginTop={2} marginLeft={12} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                            <NumberInputField border={10} />
+                            <NumberInputStepper>
+                                <NumberIncrementStepper paddingTop={13} height={10} />
+                                <NumberDecrementStepper height={10} />
+                            </NumberInputStepper>
+                        </NumberInput>
                     </div>
                 </div>
+
+                
+                <div class='col-span-3 gap-10 flex mx-8  h-72'>
+
+                    <div className='w-1/2 p-4'>
+                        <div className='flex'>
+                            <h1 className='mr-10 text-sm'>Peso p. talla</h1>
+                            <Box sx={{ width: 180 }}>
+                                <Slider
+                                    aria-label="Custom marks"
+                                    defaultValue={20}
+                                    getAriaValueText={valuetext}
+                                    step={10}
+                                    valueLabelDisplay="auto"
+                                    marks={marks}
+                                />
+                            </Box>
+                        </div>
+                        <div className='flex'>
+                            <h1 className='mr-14 text-sm'>Peso p. edad</h1>
+                            <Box sx={{ width: 180 }}>
+                                <Slider
+                                    aria-label="Custom marks"
+                                    defaultValue={20}
+                                    getAriaValueText={valuetext}
+                                    step={10}
+                                    valueLabelDisplay="auto"
+                                    marks={marks}
+                                />
+                            </Box>
+                        </div>
+                        <div className='flex'>
+                            <h1 className='mr-6 text-sm'>Talla para la edad</h1>
+                            <Box sx={{ width: 180 }}>
+                                <Slider
+                                    aria-label="Custom marks"
+                                    defaultValue={20}
+                                    getAriaValueText={valuetext}
+                                    step={10}
+                                    valueLabelDisplay="auto"
+                                    marks={marks}
+                                />
+                            </Box>
+                        </div>
+                        <div className='flex'>
+                            <h1 className='mr-16'>IMC p. edad</h1>
+                            <Box sx={{ width: 180 }}>
+                                <Slider
+                                    aria-label="Custom marks"
+                                    defaultValue={20}
+                                    getAriaValueText={valuetext}
+                                    step={10}
+                                    valueLabelDisplay="auto"
+                                    marks={marks}
+                                />
+                            </Box>
+                        </div>
+                    </div>
+
+                    <div className='w-1/2 p-4'>
+                        <div className='flex'>
+                            <h1 className='mr-16'>PC p. edad</h1>
+                            <Box sx={{ width: 180 }}>
+                                <Slider
+                                    aria-label="Custom marks"
+                                    defaultValue={20}
+                                    getAriaValueText={valuetext}
+                                    step={10}
+                                    valueLabelDisplay="auto"
+                                    marks={marks}
+                                />
+                            </Box>
+                        </div>
+                        <div className='flex'>
+                            <h1 className='mr-14'>PPMB p. edad</h1>
+                            <Box sx={{ width: 180 }}>
+                                <Slider
+                                    aria-label="Custom marks"
+                                    defaultValue={20}
+                                    getAriaValueText={valuetext}
+                                    step={10}
+                                    valueLabelDisplay="auto"
+                                    marks={marks}
+                                />
+                            </Box>
+                        </div>
+                        <div className='flex'>
+                            <h1 className='mr-6'>PTr p. edad</h1>
+                            <Box sx={{ width: 180 }}>
+                                <Slider
+                                    aria-label="Custom marks"
+                                    defaultValue={20}
+                                    getAriaValueText={valuetext}
+                                    step={10}
+                                    valueLabelDisplay="auto"
+                                    marks={marks}
+                                />
+                            </Box>
+                        </div>
+                        <div className='flex'>
+                            <h1 className='mr-16'>PSs p. edad</h1>
+                            <Box sx={{ width: 180 }}>
+                                <Slider
+                                    aria-label="Custom marks"
+                                    defaultValue={20}
+                                    getAriaValueText={valuetext}
+                                    step={10}
+                                    valueLabelDisplay="auto"
+                                    marks={marks}
+                                />
+                            </Box>
+                        </div>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+
             </div>
+
         </div>
     );
 }

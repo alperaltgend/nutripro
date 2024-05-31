@@ -1,0 +1,85 @@
+<div className='col-span-3 flex mt-5 ml-5'>
+    <h1 className='mx-2 mt-10'>Fecha de Visita</h1>
+    <div className='w-40 mt-5'>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+                view={["Año", "Mes", "Día"]}
+                value={value}
+                onChange={(newValue) => setValue(newValue)}
+            />
+        </LocalizationProvider>
+    </div>
+    <div className='mt-2 flex flex-col'>
+        <FormControl class="flex items-center">
+            <FormLabel id="demo-controlled-radio-buttons-group" >Género</FormLabel>
+            <RadioGroup
+
+                aria-labelledby="demo-controlled-radio-buttons-group"
+                name="controlled-radio-buttons-group"
+                value={valueradio1}
+                onChange={handleChange1}
+                row
+            >
+                <FormControlLabel value="female" class="ml-3 mr-8" control={<Radio />} label="Female" />
+                <FormControlLabel value="male" control={<Radio />} label="Male" />
+            </RadioGroup>
+        </FormControl>
+        <FormControl class="flex items-center">
+            <FormLabel id="demo-controlled-radio-buttons-group" >Medido</FormLabel>
+            <RadioGroup
+
+                aria-labelledby="demo-controlled-radio-buttons-group"
+                name="controlled-radio-buttons-group"
+                value={valueradio2}
+                onChange={handleChange2}
+                row
+            >
+                <FormControlLabel value="female" class="mx-2 mr-0.5" control={<Radio />} label="Acostado" />
+                <FormControlLabel value="male" class="ml-1" control={<Radio />} label="De Pie" />
+            </RadioGroup>
+        </FormControl>
+        <FormControl class="flex items-center">
+            <FormLabel id="demo-controlled-radio-buttons-group" >Edema</FormLabel>
+            <RadioGroup
+
+                aria-labelledby="demo-controlled-radio-buttons-group"
+                name="controlled-radio-buttons-group"
+                value={valueradio3}
+                onChange={handleChange3}
+                row
+                className='ml-1'
+            >
+                <FormControlLabel value="female" class="ml-2.5 mr-16" control={<Radio />} label="No" />
+                <FormControlLabel value="male" control={<Radio />} label="Si" />
+            </RadioGroup>
+        </FormControl>
+
+    </div>
+    <div className='mx-10 flex flex-col'>
+        <div className='flex items-start'>
+            <h1 className='mx-2 mt-4'>Peso(Kg)</h1>
+            <NumberInput maxW={90} marginTop={2} marginLeft={85} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                <NumberInputField border={10} />
+                <NumberInputStepper>
+                    <NumberIncrementStepper paddingTop={13} height={10} />
+                    <NumberDecrementStepper height={10} />
+                </NumberInputStepper>
+            </NumberInput>
+        </div>
+        <div className='flex items-start'>
+            <h1 className='mx-2 mt-4'>Longitud/Talla (cm)</h1>
+            <NumberInput maxW={90} marginTop={2} marginLeft={10} paddingTop={15} focusBorderColor='gray.500' focusInputOnChange={true} defaultValue={15} precision={2} step={0.1} size={"lg"}>
+                <NumberInputField border={10} />
+                <NumberInputStepper>
+                    <NumberIncrementStepper paddingTop={13} height={10} />
+                    <NumberDecrementStepper height={10} />
+                </NumberInputStepper>
+            </NumberInput>
+        </div>
+        <div className='flex items-start'>
+            <h1 className='mx-2 mt-4'>IMC</h1>
+            <h1 className='mt-4 ml-32'>01</h1>
+        </div>
+    </div>
+
+</div>
