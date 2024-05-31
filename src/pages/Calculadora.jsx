@@ -77,7 +77,7 @@ export default function Calculadora() {
 
         <div className='flex h-screen'>
             <Sidebar></Sidebar>
-            <div class="grid grid-cols-3 w-4/5 h-[37rem] ">
+            <div class="grid grid-cols-3 w-4/5 h-[36rem] ">
 
                 <div className='flex mt-5 ml-5'>
                     <h1 className='mx-2 mt-4'>Fecha de Visita</h1>
