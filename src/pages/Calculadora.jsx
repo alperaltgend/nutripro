@@ -166,8 +166,11 @@ export default function Calculadora() {
                 </div>
 
                 <div className='flex mt-5 ml-5'>
-                    <h1 className='mx-2 mt-4'>Fecha de Naci.</h1>
-                    <div className='w-40'>
+                    <div className=''>
+                        <h1 className='mx-2 mt-4'>Fecha de Naci.</h1>
+                        <h1 className='mx-2 mt-10'>Edad: 10</h1>                  
+                    </div>
+                    <div className='w-40 ml-1'>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker
                                 view={["Año", "Mes", "Día"]}
@@ -179,7 +182,7 @@ export default function Calculadora() {
                             <FormControlLabel value="fecha" control={<Checkbox />} label="Fecha aprox." />
                             <FormControlLabel value="end" control={<Checkbox />} label="Desconocida" />
                         </FormGroup>
-                        <h1>Edad: 10</h1>
+                        
                     </div>
                 </div>
 
@@ -226,7 +229,7 @@ export default function Calculadora() {
                     </div>
                 </div>
 
-                <div className='flex flex-col col-[1/2] ml-3'>
+                <div className='flex flex-col col-[1/2] ml-1'>
                     
                         <div className='flex justify-around'>
                             <h1 className='text-sm w-20'>Peso p. talla</h1>
