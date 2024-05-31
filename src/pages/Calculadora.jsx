@@ -80,8 +80,8 @@ export default function Calculadora() {
             <div class="grid grid-cols-3 w-4/5 h-[40rem] mt-5">
 
                 <div className='flex mt-5 ml-5'>
-                    <h1 className='mx-2 mt-10'>Fecha de Visita</h1>
-                    <div className='w-40 mt-5'>
+                    <h1 className='mx-2 mt-4'>Fecha de Visita</h1>
+                    <div className='w-40'>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker
                                 view={["Año", "Mes", "Día"]}
@@ -166,7 +166,7 @@ export default function Calculadora() {
                 </div>
 
                 <div className='flex mt-5 ml-5'>
-                    <h1 className='mx-2 mt-5'>Fecha de Naci.</h1>
+                    <h1 className='mx-2 mt-4'>Fecha de Naci.</h1>
                     <div className='w-40'>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
                             <DatePicker
