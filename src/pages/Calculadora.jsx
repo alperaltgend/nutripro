@@ -226,129 +226,118 @@ export default function Calculadora() {
                     </div>
                 </div>
 
-                
-                <div class='col-span-3 gap-10 flex mx-8  h-72'>
-
-                    <div className='w-1/2 p-4'>
-                        <div className='flex'>
-                            <h1 className='mr-10 text-sm'>Peso p. talla</h1>
-                            <Box sx={{ width: 180 }}>
+                <div className='flex flex-col col-[1/2] ml-3'>
+                    
+                        <div className='flex justify-around'>
+                            <h1 className='text-sm w-20'>Peso p. talla</h1>
+                            <Box sx={{ width: 160 }}>
                                 <Slider
                                     aria-label="Custom marks"
                                     defaultValue={20}
                                     getAriaValueText={valuetext}
-                                    step={10}
+                                    step={25}
+                                    valueLabelDisplay="auto"
+                                    
+                                />
+                            </Box>
+                        </div>
+                        <div className='flex justify-around'>
+                            <h1 className='text-sm w-20'>Peso p. edad</h1>
+                            <Box sx={{ width: 160 }}>
+                                <Slider
+                                    aria-label="Custom marks"
+                                    defaultValue={20}
+                                    getAriaValueText={valuetext}
+                                    step={25}
+                                    valueLabelDisplay="auto"
+                                    
+                                />
+                            </Box>
+                        </div>
+                        <div className='flex justify-around'>
+                            <h1 className='text-sm w-20'>Talla para la edad</h1>
+                            <Box sx={{ width: 160 }}>
+                                <Slider
+                                    aria-label="Custom marks"
+                                    defaultValue={20}
+                                    getAriaValueText={valuetext}
+                                    step={25}
+                                    valueLabelDisplay="auto"
+                                    
+                                />
+                            </Box>
+                        </div>
+                        <div className='flex justify-around'>
+                            <h1 className='text-sm w-20'>IMC p. edad</h1>
+                            <Box sx={{ width: 160 }}>
+                                <Slider
+                                    aria-label="Custom marks"
+                                    defaultValue={20}
+                                    getAriaValueText={valuetext}
+                                    step={25}
                                     valueLabelDisplay="auto"
                                     marks={marks}
                                 />
                             </Box>
                         </div>
-                        <div className='flex'>
-                            <h1 className='mr-14 text-sm'>Peso p. edad</h1>
-                            <Box sx={{ width: 180 }}>
-                                <Slider
-                                    aria-label="Custom marks"
-                                    defaultValue={20}
-                                    getAriaValueText={valuetext}
-                                    step={10}
-                                    valueLabelDisplay="auto"
-                                    marks={marks}
-                                />
-                            </Box>
-                        </div>
-                        <div className='flex'>
-                            <h1 className='mr-6 text-sm'>Talla para la edad</h1>
-                            <Box sx={{ width: 180 }}>
-                                <Slider
-                                    aria-label="Custom marks"
-                                    defaultValue={20}
-                                    getAriaValueText={valuetext}
-                                    step={10}
-                                    valueLabelDisplay="auto"
-                                    marks={marks}
-                                />
-                            </Box>
-                        </div>
-                        <div className='flex'>
-                            <h1 className='mr-16'>IMC p. edad</h1>
-                            <Box sx={{ width: 180 }}>
-                                <Slider
-                                    aria-label="Custom marks"
-                                    defaultValue={20}
-                                    getAriaValueText={valuetext}
-                                    step={10}
-                                    valueLabelDisplay="auto"
-                                    marks={marks}
-                                />
-                            </Box>
-                        </div>
+                    
+                </div>         
+                <div className='flex flex-col'>
+                    <div className='flex justify-around'>
+                        <h1 className='text-sm w-20'>PC p. edad</h1>
+                        <Box sx={{ width: 160 }}>
+                            <Slider
+                                aria-label="Custom marks"
+                                defaultValue={20}
+                                getAriaValueText={valuetext}
+                                step={25}
+                                valueLabelDisplay="auto"
+                                
+                            />
+                        </Box>
                     </div>
-
-                    <div className='w-1/2 p-4'>
-                        <div className='flex'>
-                            <h1 className='mr-16'>PC p. edad</h1>
-                            <Box sx={{ width: 180 }}>
-                                <Slider
-                                    aria-label="Custom marks"
-                                    defaultValue={20}
-                                    getAriaValueText={valuetext}
-                                    step={10}
-                                    valueLabelDisplay="auto"
-                                    marks={marks}
-                                />
-                            </Box>
-                        </div>
-                        <div className='flex'>
-                            <h1 className='mr-14'>PPMB p. edad</h1>
-                            <Box sx={{ width: 180 }}>
-                                <Slider
-                                    aria-label="Custom marks"
-                                    defaultValue={20}
-                                    getAriaValueText={valuetext}
-                                    step={10}
-                                    valueLabelDisplay="auto"
-                                    marks={marks}
-                                />
-                            </Box>
-                        </div>
-                        <div className='flex'>
-                            <h1 className='mr-6'>PTr p. edad</h1>
-                            <Box sx={{ width: 180 }}>
-                                <Slider
-                                    aria-label="Custom marks"
-                                    defaultValue={20}
-                                    getAriaValueText={valuetext}
-                                    step={10}
-                                    valueLabelDisplay="auto"
-                                    marks={marks}
-                                />
-                            </Box>
-                        </div>
-                        <div className='flex'>
-                            <h1 className='mr-16'>PSs p. edad</h1>
-                            <Box sx={{ width: 180 }}>
-                                <Slider
-                                    aria-label="Custom marks"
-                                    defaultValue={20}
-                                    getAriaValueText={valuetext}
-                                    step={10}
-                                    valueLabelDisplay="auto"
-                                    marks={marks}
-                                />
-                            </Box>
-                        </div>
-
+                    <div className='flex justify-around'>
+                        <h1 className='text-sm w-20'>PPMB p. edad</h1>
+                        <Box sx={{ width: 160 }}>
+                            <Slider
+                                aria-label="Custom marks"
+                                defaultValue={20}
+                                getAriaValueText={valuetext}
+                                step={25}
+                                valueLabelDisplay="auto"
+                                
+                            />
+                        </Box>
                     </div>
-
-
-
-
-
-
+                    <div className='flex justify-around'>
+                        <h1 className='text-sm w-20'>PTr p. edad</h1>
+                        <Box sx={{ width: 160 }}>
+                            <Slider
+                                aria-label="Custom marks"
+                                defaultValue={20}
+                                getAriaValueText={valuetext}
+                                step={25}
+                                valueLabelDisplay="auto"
+                                
+                            />
+                        </Box>
+                    </div>
+                    <div className='flex justify-around'>
+                        <h1 className='text-sm w-20'>PSs p. edad</h1>
+                        <Box sx={{ width: 160 }}>
+                            <Slider
+                                aria-label="Custom marks"
+                                defaultValue={20}
+                                getAriaValueText={valuetext}
+                                step={25}
+                                valueLabelDisplay="auto"
+                                marks={marks}
+                            />
+                        </Box>
+                    </div>
                 </div>
 
             </div>
-
         </div>
     );
 }
