@@ -6,9 +6,9 @@ import PruebaComp from './pages/prueba';
 
 function App() {
   return (
-    <BrowserRouter basename="/nutripro">
+    <BrowserRouter>
       <Routes>
-        <Route  path="/calculadora" element={<Calculadora></Calculadora>}></Route>
+        <Route  path="/" element={<Calculadora></Calculadora>}></Route>
       </Routes>
     </BrowserRouter>
   )
