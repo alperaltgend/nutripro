@@ -13,9 +13,9 @@ const Sidebar = () => {
     const toggleSidebar = () => {
         setIsOpen(!isOpen);
     };
-
+    
     const Menus = [
-        {title: "Calculador Antropométrico",url: "/nutripro/calculadora", src: <FaCalculator className='h-8 w-8 mr-2 mx-4 text-black'></FaCalculator>},
+        {title: "Calculador Antropométrico",url: "/calculadora", src: <FaCalculator className='h-8 w-8 mr-2 mx-4 text-black'></FaCalculator>},
         {title: "Examen Individual (Beta)",url: "/examen" ,src: <FaHome className='h-8 w-8 mr-2 mx-4 text-black'></FaHome>},
         {title: "Encuesta Nutricional (Beta)",url: "/encuesta", src: <RiSurveyFill className='h-8 w-8 mr-2 mx-4 text-black'></RiSurveyFill>},
     ]
@@ -24,9 +24,9 @@ const Sidebar = () => {
         <aside className='flex h-screen'>
             <div className={`duration-500 shadow ${isOpen ? 'w-72' : 'w-[101px]'}`}>
                 <div className="flex items-center justify-between mx-6 my-5 mr-3">
-                    <Link to="/nutripro">
-                        <img className="text-xl font-bold ml-1 h-10 w-10" src={Logo}></img>
-                    </Link>
+                    
+                    <img className="text-xl font-bold ml-1 h-10 w-10" src={Logo}></img>
+                    
                     
                     <button onClick={toggleSidebar}>
                         {isOpen ? (
