@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route  path="/" element={<Calculadora></Calculadora>}></Route>
+        <Route  path="/nutripro/" element={<Calculadora></Calculadora>}></Route>
       </Routes>
     </BrowserRouter>
   )

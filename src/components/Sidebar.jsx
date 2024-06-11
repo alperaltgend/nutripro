@@ -15,7 +15,7 @@ const Sidebar = () => {
     };
 
     const Menus = [
-        {title: "Calculador Antropométrico",url: "/", src: <FaCalculator className='h-8 w-8 mr-2 mx-4 text-black'></FaCalculator>},
+        {title: "Calculador Antropométrico",url: "/nutripro", src: <FaCalculator className='h-8 w-8 mr-2 mx-4 text-black'></FaCalculator>},
         {title: "Examen Individual (Beta)",url: "/examen" ,src: <FaHome className='h-8 w-8 mr-2 mx-4 text-black'></FaHome>},
         {title: "Encuesta Nutricional (Beta)",url: "/encuesta", src: <RiSurveyFill className='h-8 w-8 mr-2 mx-4 text-black'></RiSurveyFill>},
     ]
